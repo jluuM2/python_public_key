@@ -22,13 +22,16 @@ python3
 >>> hello_component.greet()
 'hello, world'
 >>> hello_component.getVersion()
-'1.1'
+'1.0'
 >>> 
 ```
 ## Exemple utilisation d'un objet C++ : Une voiture
+J'ai crée un nouveau composant nommé voiture_composant.
 ```
 python3
->>> from hello_component import Voiture
+>>> from voiture_component import Voiture
+>>>	voiture_component.getVersion()
+'1.0'
 >>> toyota = Voiture('yaris', 5)
 >>> toyota.get_nom()
 'yaris'
