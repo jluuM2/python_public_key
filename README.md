@@ -28,10 +28,11 @@ python3
 ## Exemple utilisation d'un objet C++ : Une voiture
 J'ai crée un nouveau composant nommé voiture_composant.
 ```
-python3
->>> from voiture_component import Voiture
+python3.7
+>>>	import voiture_component
 >>>	voiture_component.getVersion()
 '1.0'
+>>> from voiture_component import Voiture
 >>> toyota = Voiture('yaris', 5)
 >>> toyota.get_nom()
 'yaris'
@@ -45,3 +46,4 @@ python3
 '10'
 >>>
 ```
+![Image voiture](/images/voiture.png)
