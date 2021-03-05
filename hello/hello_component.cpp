@@ -1,6 +1,6 @@
 #include <pybind11/pybind11.h>
 
-char version[]="1.0";
+char version[]="1.1";
 
 char const* getVersion() {
 	return version;
