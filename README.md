@@ -47,3 +47,17 @@ python3.7
 >>>
 ```
 ![Image voiture](/images/voiture.png)
+
+## Création d'une clé en utilisant la courbe secp256k1
+J'ai crée un nouveau composant nommé cle_component
+```
+python3.7
+>>>	import cle_component
+>>> cle_component.getVersion()
+'1.0'
+>>> from cle_component import Cle
+>>> c1=Cle()
+>>> c1.initialize("4b8e29b9b0dddd58a709edba7d6df6c07ebdaf5653e325114bc5318c238f87f0")
+>>> c1.getPrivateKey()
+'4b8e29b9b0dddd58a709edba7d6df6c07ebdaf5653e325114bc5318c238f87f0'
+>>> c1.getPublicKey()
