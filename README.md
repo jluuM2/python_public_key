@@ -49,6 +49,8 @@ python3.7
 ![Image voiture](/images/voiture.png)
 
 ## Création d'une clé en utilisant la courbe secp256k1
+Pour récupérer le clé public à partir de la clé privée, j'ai utilisé la librairie [micro-ecc](https://github.com/jluuM2/micro-ecc). 
+J'ai ensuite include le uECC.h. Le code du projet marche semble marcher correctement sur un IDE (Clion)car les dépendances vers micro-ecc sont bien chargés mais ne fonctionne pas autrement.
 J'ai crée un nouveau composant nommé cle_component
 ```
 python3.7
@@ -61,3 +63,4 @@ python3.7
 >>> c1.getPrivateKey()
 '4b8e29b9b0dddd58a709edba7d6df6c07ebdaf5653e325114bc5318c238f87f0'
 >>> c1.getPublicKey()
+
