@@ -4,7 +4,7 @@ LIBS=-lpython3.7m
 COMPOSANT = cle_component
 
 LIBSO = ${COMPOSANT}.so
-LIBSO_OBJS = ${COMPOSANT}.o
+LIBSO_OBJS = ${COMPOSANT}.o micro-ecc/uECC.o
 
 include ../gcc.mk
 include ../pybind11.mk
