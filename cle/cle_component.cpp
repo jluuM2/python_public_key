@@ -61,15 +61,18 @@ class Cle
 
         void initialize(std::string &nb) { 
 		PrivateKey=nb;
-		uint8_t binaryPrivate[32];
+		const int privateKeySize = uECC_curve_private_key_size(uECC_secp256k1());
+		const int publicKeySize = uECC_curve_public_key_size(uECC_secp256k1());
+
+		uint8_t *binaryPrivate = new uint8_t[privateKeySize];
 		hexStringToBin(binaryPrivate,PrivateKey.c_str());
-		const int publicKeySize=uECC_curve_public_key_size(uECC_secp256k1());
+
 		uint8_t *varIntPublicKey = new uint8_t[publicKeySize];
 		uECC_compute_public_key(binaryPrivate,varIntPublicKey,uECC_secp256k1());
-		char hexPublicKey[128];
-		binToHexString(hexPublicKey,varIntPublicKey,64);
-		PublicKey=std::string(hexPublicKey,128);
-		//PublicKey=std::string( varIntPublicKey, varIntPublicKey+publicKeySize );
+
+		char *hexPublicKey = new char[publicKeySize*2];
+		binToHexString(hexPublicKey,varIntPublicKey,publicKeySize);
+		PublicKey=std::string(hexPublicKey,publicKeySize*2);
 		}
 		
         const std::string &getPrivateKey() const { return PrivateKey; }
